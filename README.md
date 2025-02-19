@@ -73,25 +73,11 @@ Instaxbot is a high-converting landing page designed to attract and convert busi
 
 - **Animation Libraries**:
   - Framer Motion
-  - GSAP
   - Other React-based animation libraries
 - **Styling Libraries**:
   - Tailwind CSS
   - Material-UI
-  - Styled Components
 
-### AI Tools
-
-- Utilize AI tools like ChatGPT for content generation and automation.
-- Implement other AI tools for enhancing user experience and automation.
-
-## Design Inspiration
-
-- **Color Palette**: Pink, Purple, and White (Instagram-inspired)
-- **Referenced Landing Pages**:
-  - ManyChat
-  - InstaChamp
-  - Chatfuel
 
 ## Getting Started
 
