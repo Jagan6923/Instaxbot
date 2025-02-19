@@ -28,35 +28,35 @@ export function About() {
   return (
     <section
       id="about"
-      className="py-24 bg-gradient-to-b from-white to-purple-50"
+      className="py-20 bg-gradient-to-b from-white to-purple-50"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-2xl mx-auto text-center mb-16"
+          className="max-w-3xl mx-auto text-center mb-12"
         >
           <h2 className="text-4xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent mb-4">
             Why Choose Instaxbot?
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-lg text-gray-600">
             We're on a mission to revolutionize how businesses handle their
             Instagram communications
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mx-auto"
+            className="mx-auto max-w-md"
           >
-            <h3 className="text-2xl font-bold mb-4 ">Our Story</h3>
-            <p className="text-gray-600 mb-6">
+            <h3 className="text-2xl font-bold mb-3">Our Story</h3>
+            <p className="text-gray-600 mb-4">
               Born from the challenges faced by Instagram businesses, Instaxbot
               was created to simplify customer interactions and automate
               repetitive tasks. We understand the struggles of managing
@@ -74,7 +74,7 @@ export function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
           >
             {stats.map((stat, index) => (
               <motion.div
@@ -83,9 +83,9 @@ export function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center max-w-xs mx-auto"
+                className="text-center max-w-sm mx-auto"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-pink-500/10 to-purple-600/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-14 h-14 bg-gradient-to-br from-pink-500/10 to-purple-600/10 rounded-full flex items-center justify-center mx-auto mb-3">
                   <stat.icon className="w-6 h-6 text-pink-600" />
                 </div>
                 <div className="text-2xl font-bold text-gray-900 mb-1">
