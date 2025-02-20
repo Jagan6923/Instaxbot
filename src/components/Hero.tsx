@@ -1,8 +1,11 @@
-// Hero.tsx
-import React, { useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { MessageCircle, Heart, ShoppingBag, Send, Zap } from "lucide-react";
-import VideoModal from "./VideoModal";
+import {
+  MessageCircle,
+  Heart,
+  ShoppingBag,
+  Send,
+  Zap,
+} from "lucide-react";
 
 const floatingAnimation = {
   y: [0, -10, 0],
@@ -13,15 +16,21 @@ const floatingAnimation = {
   },
 };
 
+<<<<<<< HEAD
 export const Hero = () => {
   const { scrollY, scrollYProgress } = useScroll();
   const [isModalOpen, setIsModalOpen] = useState(false);
+=======
+export const Hero= () => {
+  const { scrollY, scrollYProgress } = useScroll();
+>>>>>>> da341b17a36f952424b5ab08ffc0068c22507a10
 
   const y1 = useTransform(scrollY, [0, 500], [0, -150]);
   const y2 = useTransform(scrollY, [0, 500], [0, -50]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
   const scale = useTransform(scrollY, [0, 300], [1, 0.8]);
 
+<<<<<<< HEAD
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
@@ -30,6 +39,8 @@ export const Hero = () => {
     setIsModalOpen(false);
   };
 
+=======
+>>>>>>> da341b17a36f952424b5ab08ffc0068c22507a10
   return (
     <div className="min-h-screen pt-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
@@ -130,7 +141,10 @@ export const Hero = () => {
                 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-primary border-2 border-primary px-8 py-3 rounded-lg transition-all duration-300 text-lg font-semibold"
+<<<<<<< HEAD
                 onClick={handleOpenModal}
+=======
+>>>>>>> da341b17a36f952424b5ab08ffc0068c22507a10
               >
                 Watch Demo
               </motion.button>
@@ -257,9 +271,16 @@ export const Hero = () => {
           </motion.div>
         </div>
       </div>
+<<<<<<< HEAD
       <VideoModal isOpen={isModalOpen} onClose={handleCloseModal} />
+=======
+>>>>>>> da341b17a36f952424b5ab08ffc0068c22507a10
     </div>
   );
 };
 
+<<<<<<< HEAD
 export default Hero;
+=======
+export default Hero;
+>>>>>>> da341b17a36f952424b5ab08ffc0068c22507a10
