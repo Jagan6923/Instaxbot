@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCards } from "swiper/modules";
@@ -12,7 +12,7 @@ const testimonials = [
     avatar:
       "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop",
     image:
-      "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=600&h=600&fit=crop",
+      "https://images.pexels.com/photos/789822/pexels-photo-789822.jpeg?auto=compress&cs=tinysrgb&w=1200",
     caption:
       "Since using @instaxbot, our response time has improved by 80%! Customer satisfaction is at an all-time high. 🚀 #BusinessAutomation",
     likes: 1243,
@@ -23,7 +23,7 @@ const testimonials = [
     avatar:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop",
     image:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=600&fit=crop",
+      "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1200",
     caption:
       "Managing hundreds of DMs was impossible before @instaxbot. Now we handle inquiries 24/7! 💯 #CustomerService",
     likes: 892,
@@ -32,9 +32,9 @@ const testimonials = [
   {
     username: "beauty_essentials",
     avatar:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
+      "https://images.pexels.com/photos/6393342/pexels-photo-6393342.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     image:
-      "https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?w=600&h=600&fit=crop",
+      "https://images.pexels.com/photos/6393342/pexels-photo-6393342.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     caption:
       "Our sales increased by 45% after implementing @instaxbot! The automated responses are a game-changer. ✨ #BusinessGrowth",
     likes: 2156,
