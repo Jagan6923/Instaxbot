@@ -6,11 +6,7 @@ interface Props {
   children: ReactNode;
 }
 
-<<<<<<< HEAD
 const SuspenseComponent = ({ children }: Props) => {
-=======
-const SuspenseComponent: React.FC<Props> = ({ children }) => {
->>>>>>> da341b17a36f952424b5ab08ffc0068c22507a10
   return (
     <React.Suspense
       fallback={
