@@ -1,28 +1,40 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+// Hero.tsx
+import React, { useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import {
   MessageCircle,
   Heart,
   ShoppingBag,
   Send,
   Zap,
-} from "lucide-react";
+} from 'lucide-react';
+import VideoModal from './VideoModal';
 
 const floatingAnimation = {
   y: [0, -10, 0],
   transition: {
     duration: 2,
     repeat: Infinity,
-    ease: "easeInOut",
+    ease: 'easeInOut',
   },
 };
 
-export const Hero= () => {
+export const Hero = () => {
   const { scrollY, scrollYProgress } = useScroll();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const y1 = useTransform(scrollY, [0, 500], [0, -150]);
   const y2 = useTransform(scrollY, [0, 500], [0, -50]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
   const scale = useTransform(scrollY, [0, 300], [1, 0.8]);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="min-h-screen pt-16 overflow-hidden">
@@ -48,7 +60,7 @@ export const Hero= () => {
                 transition={{
                   duration: 2,
                   repeat: Infinity,
-                  ease: "easeInOut",
+                  ease: 'easeInOut',
                 }}
               >
                 <Heart className="text-primary" size={24} />
@@ -61,7 +73,7 @@ export const Hero= () => {
             <motion.h1
               className="text-5xl font-bold leading-tight mb-6"
               style={{
-                y: useTransform(scrollYProgress, [0, 0.5], ["0%", "100%"]),
+                y: useTransform(scrollYProgress, [0, 0.5], ['0%', '100%']),
               }}
             >
               <motion.span
@@ -69,20 +81,20 @@ export const Hero= () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                Boost Your Instagram Sales with{" "}
+                Boost Your Instagram Sales with{' '}
               </motion.span>
               <motion.span
                 className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block"
                 animate={{
-                  backgroundPosition: ["0%", "100%", "0%"],
+                  backgroundPosition: ['0%', '100%', '0%'],
                 }}
                 transition={{
                   duration: 10,
                   repeat: Infinity,
-                  ease: "linear",
+                  ease: 'linear',
                 }}
                 style={{
-                  backgroundSize: "200% auto",
+                  backgroundSize: '200% auto',
                 }}
               >
                 Smart Automation
@@ -92,7 +104,7 @@ export const Hero= () => {
             <motion.p
               className="text-xl text-gray-600 mb-8"
               style={{
-                y: useTransform(scrollYProgress, [0, 0.5], ["0%", "150%"]),
+                y: useTransform(scrollYProgress, [0, 0.5], ['0%', '150%']),
               }}
             >
               Simplify Instagram customer interactions with automated messaging
@@ -103,13 +115,13 @@ export const Hero= () => {
             <motion.div
               className="flex flex-wrap gap-4"
               style={{
-                y: useTransform(scrollYProgress, [0, 0.5], ["0%", "200%"]),
+                y: useTransform(scrollYProgress, [0, 0.5], ['0%', '200%']),
               }}
             >
               <motion.button
                 whileHover={{
                   scale: 1.05,
-                  boxShadow: "0 20px 25px -5px rgba(225, 48, 108, 0.2)",
+                  boxShadow: '0 20px 25px -5px rgba(225, 48, 108, 0.2)',
                 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-lg transition-all duration-300 text-lg font-semibold hover:shadow-lg hover:shadow-primary/25"
@@ -119,11 +131,12 @@ export const Hero= () => {
               <motion.button
                 whileHover={{
                   scale: 1.05,
-                  backgroundColor: "#E1306C",
-                  color: "white",
+                  backgroundColor: '#E1306C',
+                  color: 'white',
                 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-primary border-2 border-primary px-8 py-3 rounded-lg transition-all duration-300 text-lg font-semibold"
+                onClick={handleOpenModal}
               >
                 Watch Demo
               </motion.button>
@@ -132,13 +145,13 @@ export const Hero= () => {
             <motion.div
               className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-6"
               style={{
-                y: useTransform(scrollYProgress, [0, 0.5], ["0%", "250%"]),
+                y: useTransform(scrollYProgress, [0, 0.5], ['0%', '250%']),
               }}
             >
               {[
-                { icon: MessageCircle, text: "Smart Replies" },
-                { icon: ShoppingBag, text: "Order Management" },
-                { icon: Send, text: "Instant DMs" },
+                { icon: MessageCircle, text: 'Smart Replies' },
+                { icon: ShoppingBag, text: 'Order Management' },
+                { icon: Send, text: 'Instant DMs' },
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -181,7 +194,7 @@ export const Hero= () => {
                 transition={{
                   duration: 3,
                   repeat: Infinity,
-                  ease: "easeInOut",
+                  ease: 'easeInOut',
                 }}
               />
               <img
@@ -196,12 +209,12 @@ export const Hero= () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}
               style={{
-                y: useTransform(scrollYProgress, [0, 0.5], ["0%", "100%"]),
+                y: useTransform(scrollYProgress, [0, 0.5], ['0%', '100%']),
               }}
               className="absolute -bottom-8 -left-8 bg-white p-6 rounded-xl shadow-lg"
               whileHover={{
                 scale: 1.05,
-                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
+                boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)',
               }}
             >
               <div className="flex items-center gap-4">
@@ -226,12 +239,12 @@ export const Hero= () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.7 }}
               style={{
-                y: useTransform(scrollYProgress, [0, 0.5], ["0%", "-100%"]),
+                y: useTransform(scrollYProgress, [0, 0.5], ['0%', '-100%']),
               }}
               className="absolute -top-8 -right-8 bg-white p-6 rounded-xl shadow-lg"
               whileHover={{
                 scale: 1.05,
-                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
+                boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)',
               }}
             >
               <div className="flex items-center gap-4">
@@ -250,6 +263,7 @@ export const Hero= () => {
           </motion.div>
         </div>
       </div>
+      <VideoModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
 };

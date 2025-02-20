@@ -1,14 +1,13 @@
-// VideoModal.tsx
 import React from "react";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
-import video1 from "./video4.mp4";
+import video from "./video4.mp4";
 interface VideoModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-const VideoModal = ({ isOpen, onClose }: VideoModalProps) => {
+const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
@@ -21,18 +20,20 @@ const VideoModal = ({ isOpen, onClose }: VideoModalProps) => {
         <div className="relative">
           <button
             onClick={onClose}
-            className="absolute top-2 right-2 text-white hover:text-gray-900"
+            className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
           >
             <X size={24} />
           </button>
-          <div className="aspect-w-16 aspect-h-9">
+          <div className="w-full h-[500px]">
+            {" "}
+            {/* Set a fixed height */}
             <iframe
-              src={video1}
+              src={video}
               title="Demo Video"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              className="w-full h-[500px] rounded-lg"
+              className="w-full h-full"
             ></iframe>
           </div>
         </div>
